@@ -1,12 +1,15 @@
+const cors = require("cors");
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
+
 
 const adminRouter = require("./routers/admin");
 const headRouter = require("./routers/head");
 const teacherRouter = require("./routers/teacher");
 
 app.use(express.json());
+app.use(cors());
 
 const dburl =
   "mongodb+srv://test:test@cluster0.rmspt.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
